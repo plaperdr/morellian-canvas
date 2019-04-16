@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PicassAuth prototype</title>
+</head>
+<body>
+<h2>PicassAuth - Generation of a canvas challenge and the corresponding image</h2>
+
+    <a href="https://github.com/plaperdr/morellian-canvas">[GitHub repo]</a>
+    <a href="https://plaperdr.github.io/assets/documents/canvasauthentication_dimva2019.pdf" target="_blank">[Paper]</a>
+    <br><br>
+    <button type="button" onclick="generateImage()">Generate a new image</button>
+
+    <p>Generation time: <span id="genTime"></span></p>
+    <p>Render time: <span id="renderTime"></span></p>
+    <p>Hash time: <span id="hashTime"></span></p>
+    <p></p>
+    <p>Hash: <span id="hash"></span></p>
+    <canvas id="canvas1" height="300" width="1900" style="border:1px solid #d3d3d3"></canvas>
+    <br>
+    <button onclick="toggleChallenge()"><span id="buttonChallenge">Show generated challenge</span></button>
+    <div id="chaDiv" style="display: none">
+        Generated challenge: <span id="challenge"></span>
+    </div>
+
+    <script type="text/javascript" src="generator.js"></script>
+    <script type="text/javascript" src="picassauth.js"></script>
+    <script type="text/javascript" src="murmur.js"></script>
+    <script type="text/javascript">
+        function generateImage() {
+          //Hiding challenge if shown
+          hideChallenge();
+
+          //Generating the challenge and the response
+          var start = performance.now();
+          var challenge = generateChallenge();
+          var genTime = performance.now() - start;
+
+          start = performance.now();
+          var data = getData(challenge);
+          var renderTime = performance.now() - start;
+
+          start = performance.now();
+          var ha = x64hash128(data);
+          var hashTime = performance.now() - start;
+
+          //Displaying the results
+          document.getElementById("genTime").innerText = genTime+"ms";
+          document.getElementById("renderTime").innerText = renderTime+"ms";
+          document.getElementById("hashTime").innerText = hashTime+"ms";
+          document.getElementById("challenge").innerText = JSON.stringify(challenge);
+          document.getElementById("hash").innerText = ha;
+        }
+    </script>
+    <script type="text/javascript">
+      function toggleChallenge() {
+        var x = document.getElementById("chaDiv");
+        if (x.style.display === "none") {
+          showChallenge();
+        } else {
+          hideChallenge();
+
+        }
+      }
+
+      function showChallenge(){
+        document.getElementById("chaDiv").style.display = "block";
+        document.getElementById("buttonChallenge").innerText = "Hide generated challenge";
+      }
+
+      function hideChallenge(){
+        document.getElementById("chaDiv").style.display = "none";
+        document.getElementById("buttonChallenge").innerText = "Show generated challenge";
+      }
+    </script>
+
+</body>
+</html>

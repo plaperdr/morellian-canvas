@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {font-family: Arial;}
+
+        /* Style the tab */
+        .tab {
+            overflow: hidden;
+            border: 1px solid #ccc;
+            background-color: #f1f1f1;
+        }
+
+        /* Style the buttons inside the tab */
+        .tab button {
+            background-color: inherit;
+            float: left;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            transition: 0.3s;
+            font-size: 17px;
+        }
+
+        /* Change background color of buttons on hover */
+        .tab button:hover {
+            background-color: #ddd;
+        }
+
+        /* Create an active/current tablink class */
+        .tab button.active {
+            background-color: #ccc;
+        }
+
+        /* Style the tab content */
+        .tabcontent {
+            display: none;
+            padding: 6px 12px;
+            border: 1px solid #ccc;
+            border-top: none;
+        }
+    </style>
+    <title>Canvas preliminary analysis</title>
+</head>
+<body>
+
+<h2>Canvas preliminary analysis</h2>
+<p>Click on the buttons inside the tabbed menu to select the desired phase.</p>
+
+<div class="tab">
+    <button class="tablinks" onclick="openCity(event, 'phase1')">Phase 1</button>
+    <button class="tablinks" onclick="openCity(event, 'phase2')">Phase 2</button>
+    <button class="tablinks" onclick="openCity(event, 'phase3')">Phase 3</button>
+</div>
+
+<div id="phase1" class="tabcontent">
+    <canvas id="phase1-canvas1" height="30" width="400" style="border:1px solid #d3d3d3"></canvas>
+    <br>
+    <canvas id="phase1-canvas2" height="60" width="400" style="border:1px solid #d3d3d3"></canvas>
+    <br>
+    <canvas id="phase1-canvas3" height="60" width="400" style="border:1px solid #d3d3d3"></canvas>
+    <br>
+    <canvas id="phase1-canvas4" height="60" width="400" style="border:1px solid #d3d3d3"></canvas>
+    <br>
+    <canvas id="phase1-canvas5" height="60" width="400" style="border:1px solid #d3d3d3"></canvas>
+    <br>
+    <canvas id="phase1-canvas6" height="60" width="400" style="border:1px solid #d3d3d3"></canvas>
+    <br>
+    <canvas id="phase1-canvas7" height="400" width="400" style="border:1px solid #d3d3d3"></canvas>
+    <br>
+    <canvas id="phase1-canvas8" height="60" width="400" style="border:1px solid #d3d3d3"></canvas>
+    <br>
+    <canvas id="phase1-canvas9" height="60" width="400" style="border:1px solid #d3d3d3"></canvas>
+    <br>
+    <canvas id="phase1-canvas10" height="80" width="80" style="border:1px solid #d3d3d3"></canvas>
+    <br>
+    <canvas id="phase1-canvas11" height="200" width="200" style="border:1px solid #d3d3d3"></canvas>
+    <br>
+    <canvas id="phase1-canvas12" height="200" width="200" style="border:1px solid #d3d3d3"></canvas>
+    <br>
+    <canvas id="phase1-canvas13" height="200" width="200" style="border:1px solid #d3d3d3"></canvas>
+    <br>
+    <canvas id="phase1-canvas14" height="275" width="450" style="border:1px solid #d3d3d3"></canvas>
+    <br>
+    <canvas id="phase1-canvas15" height="500" width="500" style="border:1px solid #d3d3d3"></canvas>
+    <script type="text/javascript" src="phase1.js"></script>
+</div>
+
+<div id="phase2" class="tabcontent">
+    <canvas id="phase2-canvas1" height="90" width="400" style="border:1px solid #d3d3d3"></canvas>
+    <br>
+    <canvas id="phase2-canvas2" height="90" width="400" style="border:1px solid #d3d3d3"></canvas>
+    <br>
+    <canvas id="phase2-canvas3" height="90" width="400" style="border:1px solid #d3d3d3"></canvas>
+    <br>
+    <canvas id="phase2-canvas4" height="90" width="535" style="border:1px solid #d3d3d3"></canvas>
+    <br>
+    <canvas id="phase2-canvas5" height="180" width="800" style="border:1px solid #d3d3d3"></canvas>
+    <br>
+    <canvas id="phase2-canvas6" height="180" width="800" style="border:1px solid #d3d3d3"></canvas>
+    <br>
+    <canvas id="phase2-canvas7" height="90" width="400" style="border:1px solid #d3d3d3"></canvas>
+    <br>
+    <canvas id="phase2-canvas8" height="90" width="400" style="border:1px solid #d3d3d3"></canvas>
+    <br>
+    <canvas id="phase2-canvas9" height="90" width="400" style="border:1px solid #d3d3d3"></canvas>
+    <br>
+    <canvas id="phase2-canvas10" height="90" width="400" style="border:1px solid #d3d3d3"></canvas>
+    <br>
+    <canvas id="phase2-canvas11" height="90" width="400" style="border:1px solid #d3d3d3"></canvas>
+    <br>
+    <canvas id="phase2-canvas12" height="90" width="400" style="border:1px solid #d3d3d3"></canvas>
+    <br>
+    <canvas id="phase2-canvas13" height="90" width="400" style="border:1px solid #d3d3d3"></canvas>
+    <br>
+    <canvas id="phase2-canvas14" height="90" width="400" style="border:1px solid #d3d3d3"></canvas>
+    <br>
+    <canvas id="phase2-canvas15" height="90" width="400" style="border:1px solid #d3d3d3"></canvas>
+    <script type="text/javascript" src="phase2.js"></script>
+</div>
+
+<div id="phase3" class="tabcontent">
+    <canvas id="phase3-canvas1" height="90" width="400" style="border:1px solid #d3d3d3"></canvas>
+    <br>
+    <canvas id="phase3-canvas2" height="90" width="400" style="border:1px solid #d3d3d3"></canvas>
+    <br>
+    <canvas id="phase3-canvas3" height="90" width="400" style="border:1px solid #d3d3d3"></canvas>
+    <br>
+    <canvas id="phase3-canvas4" height="90" width="400" style="border:1px solid #d3d3d3"></canvas>
+    <br>
+    <canvas id="phase3-canvas5" height="90" width="400" style="border:1px solid #d3d3d3"></canvas>
+    <br>
+    <canvas id="phase3-canvas6" height="90" width="400" style="border:1px solid #d3d3d3"></canvas>
+    <br>
+    <canvas id="phase3-canvas7" height="90" width="400" style="border:1px solid #d3d3d3"></canvas>
+    <br>
+    <canvas id="phase3-canvas8" height="90" width="400" style="border:1px solid #d3d3d3"></canvas>
+    <br>
+    <canvas id="phase3-canvas9" height="90" width="400" style="border:1px solid #d3d3d3"></canvas>
+    <br>
+    <canvas id="phase3-canvas10" height="90" width="400" style="border:1px solid #d3d3d3"></canvas>
+    <script type="text/javascript" src="phase3.js"></script>
+</div>
+
+<script>
+  function openCity(evt, cityName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+  }
+</script>
+
+</body>
+</html>
